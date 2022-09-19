@@ -10,17 +10,18 @@ const PokemonComponent = (props) => {
         return value ? "Yes" : "No"
     }
         
+    // More features to add
     // console.log('pokemonSpecies.pokedex_numbers =>',pokemonSpecies.pokedex_numbers[0].entry_number);
     // console.log('pokemonSpecies =>',pokemonSpecies.capture_rate);
 
     return(
         <View style={styles.wrapper} >
         <View>
-            <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
-                <Image source={{ uri: pokemon.sprites.front_default}} style={{width: 96, height: 96, flexBasis: "25%" }} />
-                <Image source={{ uri: pokemon.sprites.back_default}} style={{width: 96, height: 96, flexBasis: "25%"}} />
-                <Image source={{ uri: pokemon.sprites.front_shiny}} style={{width: 96, height: 96, flexBasis: "25%"}} />
-                <Image source={{ uri: pokemon.sprites.back_shiny}} style={{width: 96, height: 96, flexBasis: "25%"}} />
+            <View style={styles.spriteContainer}>
+                <Image source={{ uri: pokemon.sprites.front_default}} style={styles.sprite} />
+                <Image source={{ uri: pokemon.sprites.back_default}} style={styles.sprite} />
+                <Image source={{ uri: pokemon.sprites.front_shiny}} style={styles.sprite} />
+                <Image source={{ uri: pokemon.sprites.back_shiny}} style={styles.sprite} />
             </View>
         </View>
                 <Text style={styles.name}> { pokemon.name }</Text>
@@ -62,6 +63,17 @@ const styles = StyleSheet.create({
     itIs: {
         flexDirection: 'row',
         marginRight: 10,
+    },
+    spriteContainer: { 
+        flexDirection: "row", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        flexWrap: "wrap" 
+    },
+    sprite: {
+        width: 96, 
+        height: 96, 
+        flexBasis: "25%"
     },
 })
 

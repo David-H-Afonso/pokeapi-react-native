@@ -1,5 +1,4 @@
 import endpoints from './endpoints';
-import customFetch from './customFetch'
 
 export const getAllPokemonFetch = async () => {
     let response = await fetch(`${endpoints.pokemon}/?limit=151`);

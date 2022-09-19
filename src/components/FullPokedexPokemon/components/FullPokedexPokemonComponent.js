@@ -6,17 +6,17 @@ const FullPokedexPokemonComponent = (props) => {
 
     return(
         <TouchableOpacity style={styles.wrapper} onPress={() => navigation.navigate("Pokemon", {pokemon, pokemonTypes, pokedexNumber})} >
-        <Image source={{ uri: pokemon.sprites.other["official-artwork"].front_default}} style={{width: 96, height: 96, backgroundColor: "#F2F2F2", borderRadius: 5}} />
+        <Image source={{ uri: pokemon.sprites.other["official-artwork"].front_default}} style={styles.sprite} />
             <Text style={{fontSize: 10}}>N.º{pokedexNumber}</Text>
             <Text style={styles.name}>{ pokemon.name } </Text>
             <View style={{flexDirection: "row"}}>
                 <View style={[styles.type,{backgroundColor: color[0]?.bgColor}]}>
-                    <Text style={[styles.formatData, styles.typeText, {color: color[0]?.color}]}>{pokemonTypes[0]}</Text>
+                    <Text style={[styles.typeText, {color: color[0]?.color}]}>{pokemonTypes[0]}</Text>
                 </View>
                 { pokemonTypes[1] 
                     ? 
                     <View style={[styles.type,{backgroundColor: color[1]?.bgColor}]}>
-                        <Text style={[styles.formatData, styles.typeText, {color: color[1]?.color}]}>{pokemonTypes[1]}</Text>
+                        <Text style={[styles.typeText, {color: color[1]?.color}]}>{pokemonTypes[1]}</Text>
                     </View>
                 :   null }
             </View>
@@ -44,6 +44,12 @@ const styles = StyleSheet.create({
         fontSize: 12,
         padding: 1,
         textTransform: 'capitalize',
+    },
+    sprite: {
+        width: 96, 
+        height: 96, 
+        backgroundColor: "#F2F2F2", 
+        borderRadius: 5
     },
 })
 

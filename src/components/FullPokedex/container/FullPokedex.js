@@ -5,7 +5,6 @@ import FullPokedexComponent from '../components/FullPokedexComponent'
 import {Loading} from '../../elements/index'
 
 const FullPokedex = (props) => {
-    const { navigation } = props
     const [allPokemon,setAllPokemon] = useState({})
     const [loading,setLoading] = useState({})
   
@@ -26,8 +25,6 @@ const FullPokedex = (props) => {
             setLoading(false)
         }
     }
-  
-    // console.log('allPokemon =>',allPokemon);
     
     return (
         <View style={styles.wrapper}>
